@@ -26,7 +26,8 @@ RUN gem install nokogiri -- --use-system-libraries
 RUN gem install capybara
 RUN gem install poltergeist
 RUN gem install pry
-RUN gem instal rspec cucumber-rails
+RUN gem install rspec
+RUN gem install turnip
 
 COPY test.rb /root/test.rb
 WORKDIR /root
