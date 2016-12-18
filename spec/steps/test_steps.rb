@@ -1,7 +1,26 @@
-step 'pry' do
-  visit 'http://www.google.com'
-  puts "Capybara.text: #{Capybara.text}"
-  save_screenshot('output/capybara_test_ss.jpg')
+module SS
+  module SS
+    def ss
+      save_screenshot('output/capybara_test_ss.jpg')
+    end
+  end
+end
 
+step 'take screenshot' do
+  save_screenshot('output/capybara_test_ss.jpg')
+end
+
+step 'pry' do
+  extend SS::SS # allows for ss() to be called during debugging
   binding.pry
+end
+
+step 'visit :url' do |url|
+  visit url
+end
+
+step 'search google for :string' do |search_string|
+  visit 'http://www.google.com'
+  page.fill_in 'q', with: search_string
+  page.all('input').find {|x| x.value == 'Google Search'}.click
 end
