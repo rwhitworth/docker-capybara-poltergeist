@@ -30,7 +30,6 @@ RUN gem install pry
 RUN gem install rspec
 RUN gem install turnip
 
-COPY spec /root/spec
 COPY dot.rspec /root/.rspec
 WORKDIR /root
 
