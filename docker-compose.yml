@@ -1,0 +1,5 @@
+blackbox-test:
+  build: .
+  volumes:
+    - ./output:/root/output
+    - ./spec:/root/spec
