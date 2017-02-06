@@ -24,3 +24,11 @@ step 'search google for :string' do |search_string|
   page.fill_in 'q', with: search_string
   page.all('input').find {|x| x.value == 'Google Search'}.click
 end
+
+step 'throw exception' do
+  throw 'exception 12345 that is super important!!!'
+end
+
+step 'sleep :sleep' do |s|
+  sleep s.to_i
+end
