@@ -3,3 +3,4 @@ blackbox-test:
   volumes:
     - ./output:/root/output
     - ./spec:/root/spec
+    - ./features:/root/features

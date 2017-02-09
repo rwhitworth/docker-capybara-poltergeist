@@ -29,8 +29,9 @@ RUN gem install poltergeist
 RUN gem install pry
 RUN gem install rspec
 RUN gem install turnip
+RUN gem install cucumber
 
 COPY dot.rspec /root/.rspec
 WORKDIR /root
 
-ENTRYPOINT ["rspec", "/root"]
+ENTRYPOINT ["cucumber"]
